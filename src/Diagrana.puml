@@ -1,0 +1,26 @@
+@startuml
+class User {
+    - id: int
+    - name: String
+    - email: String
+    - password: String
+    + login() void
+    + logout() void
+}
+
+class Student extends User {
+    - Programa: int
+    - Asignaturas: List
+    + progreso: int ("%")
+    + selectSubject()
+    + viewProgress()
+}
+
+class Professor extends User {
+    - Area: String
+    - Asignaturas: String
+    - quizzesCreados: String
+    + createQuiz() void
+    + verProgresoEstudiante(): void
+}
+@enduml
